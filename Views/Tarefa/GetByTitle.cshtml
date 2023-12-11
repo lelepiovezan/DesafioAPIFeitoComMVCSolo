@@ -1,0 +1,26 @@
+@model DesafioAPIFeitoComMVCSolo.Models.Tarefa
+@{
+    ViewData["Title"] ="Lista de Tarefas Por Titulo";
+}
+
+<h2>Buscar Tarefa por Titulo</h2>
+
+<form asp-action="GetByTitule" method="get">
+    <div class="form-group">
+        <label asp-for="Titulo" class="control-label">Titulo:</label>
+        <input asp-for="Titulo" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Buscar</button>
+</form>
+
+@if (Model != null)
+{
+    <h3>Detalhes da Tarefa</h3>
+    <p>ID: @Model.Id</p>
+    <p>Descrição: @Model.Descricao</p>
+    <p>Descrição: @Model.Titulo</p>
+    <p>Descrição: @Model.Data</p>
+    <p>Descrição: @Model.Status</p>
+
+}
+<a asp-action="Index">Voltar</a>
